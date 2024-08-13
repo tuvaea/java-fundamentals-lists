@@ -43,7 +43,9 @@ public class Exercise extends ExerciseBase {
         TODO: 1. Create a method named getSecondNumber that returns a whole number. It must return the
            second number contained in the list that is returned from getFavouriteNumbers
      */
-
+    public int getSecondNumber(){
+        return getFavouriteNumbers().get(1);
+    }
 
 
     /*
@@ -55,7 +57,10 @@ public class Exercise extends ExerciseBase {
          Use the ArrayList's replaceAll method to iterate through the ArrayList and replace each value with its double
          https://www.programiz.com/java-programming/library/arraylist/replaceall
      */
-
+public ArrayList<Integer> multiply(ArrayList<Integer> list, int number){
+    list.replaceAll(e -> e * number);
+    return list;
+}
 
 
     /*
@@ -64,6 +69,9 @@ public class Exercise extends ExerciseBase {
          The method must return a boolean that indicates whether the provided list is empty or not
      */
 
+    public boolean isEmpty(ArrayList<String> list){
+        return list.isEmpty();
+    }
 
 
     /*
@@ -72,6 +80,11 @@ public class Exercise extends ExerciseBase {
          - A string
          The method must add the second parameter into the list provided and then return the list
      */
+
+    public ArrayList<String> addIngredient(ArrayList<String> list, String string){
+        list.add(string);
+        return list;
+    }
 
 
 
@@ -82,6 +95,15 @@ public class Exercise extends ExerciseBase {
          The method must remove the second parameter from the list and then return the list
      */
 
+    public ArrayList<String> removeIngredient(ArrayList<String> list, String string){
+        for (int i = 0; i < list.size(); i++){
+            if(string.equals(list.get(i))){
+                list.remove(i);
+            }
+        }
+        return list;
+    }
+
 
 
     /*
@@ -90,6 +112,10 @@ public class Exercise extends ExerciseBase {
          - A string
          The method must return a boolean that indicates whether the second parameter exists in the provided list
      */
+
+    public boolean containsIngredient(ArrayList<String> list, String string){
+       return list.contains(string);
+    }
 
 
 
